@@ -11,7 +11,7 @@ public class SortTest {
 //        InsertSort(arr);
 //        SelectSort(arr);
 //        ShellSort(arr);
-//        QuickSort(arr,0,arr.length-1);
+        QuickSort(arr,0,arr.length-1);
 
         System.out.println(arr.length);
         for (int i = 0; i < arr.length; i++) {
