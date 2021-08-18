@@ -1,26 +1,34 @@
 package SortAlgorithms;
 
+
+import static SortAlgorithms.HeapSort1.heapSort;
+
 /**
  * @author 吃西瓜的通酱
  * @createTime 2021-03-19 20:56
  */
 public class SortTest {
     public static void main(String[] args) {
-        int[] arr = { 8, 4, 5, 7, 1, 3, 6, 2 };
-//        BubbleSort(arr);
-//        InsertSort(arr);
-//        SelectSort(arr);
-//        ShellSort(arr);
-        QuickSort(arr,0,arr.length-1);
-
+//        int[] arr = { 8, 4, 5, 7, 1, 3, 6, 2 };
+        int[] arr = {8,4,5,7,1};
+//        bubbleSort(arr);
+//        insertSort(arr);
+//        selectSort(arr);
+//        shellSort(arr);
+//        quickSort(arr,0,arr.length-1);
+        heapSort(arr);
         System.out.println(arr.length);
         for (int i = 0; i < arr.length; i++) {
             System.out.printf("%s\t",arr[i]);
         }
 
     }
+
+
+
+
     //快排
-    public static void QuickSort(int[] arr, int low, int high){
+    public static void quickSort(int[] arr, int low, int high){
         int i,j,pivot;
         if(low >= high){
             return;
@@ -43,11 +51,11 @@ public class SortTest {
             }
         }
         arr[i] = pivot;
-        QuickSort(arr,low,i-1);
-        QuickSort(arr,i+1,high);
+        quickSort(arr,low,i-1);
+        quickSort(arr,i+1,high);
     }
     //希尔排序
-    public static void ShellSort(int[] arr){
+    public static void shellSort(int[] arr){
         int temp;
         for (int gap = arr.length/2; gap>0; gap/=2) {
 
@@ -65,7 +73,7 @@ public class SortTest {
     }
 
     //插入排序
-    public static void InsertSort(int[] arr){
+    public static void insertSort(int[] arr){
         //需要找到插入的位置，及插入的值
         int insertValue;
         int insertIndex;
@@ -82,7 +90,7 @@ public class SortTest {
         }
     }
     //选择排序
-    public static void SelectSort(int[] arr){
+    public static void selectSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int minIndex = i;
             int min = arr[i];
@@ -100,7 +108,7 @@ public class SortTest {
     }
 
     //冒泡排序
-    public static void BubbleSort(int[] arr){
+    public static void bubbleSort(int[] arr){
         int temp;
         boolean flag = false;
         for (int i = 0; i < arr.length - 1; i++) {
